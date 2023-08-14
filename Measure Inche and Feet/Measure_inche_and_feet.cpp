@@ -42,12 +42,12 @@ private:
     Distance d1;
     int feet1;
     int feet2;
-    int choise;
+    int choice;
     float inch1;
     float inch2;
 public:
     // Constructor
-    Measurement(int feet1,int feet2, float inch1,float inch2,int choise):feet1(feet1),feet2(feet2),inch1(inch1),inch2(inch2),choise(choise){}
+    Measurement(int feet1,int feet2, float inch1,float inch2,int choice):feet1(feet1),feet2(feet2),inch1(inch1),inch2(inch2),choice(choice){}
     Measurement(){feet1 = 0; feet2 = 0; inch1 = 0.0; inch2 = 0.0; choise = 0;}
     // Destructor
     ~Measurement(){}
@@ -64,8 +64,8 @@ public:
      cin >> inch2;
      d1.setInch(inch1,inch2);
      cout << "\nplease choose operation\n" << "1- (+) Addition \n2- (-) Subtraction \n3- (*) Multiplication\n";
-     cin >> choise;
-     d1.op(choise,d1);
+     cin >> choice;
+     d1.op(choice,d1);
      d1.show();
      cout << "Press any key to continue \n";
      getch();
