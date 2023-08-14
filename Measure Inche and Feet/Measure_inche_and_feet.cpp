@@ -25,6 +25,7 @@
          void mul(Distance d1);
          void op(int c,Distance d1);
  };
+
  void Distance::show(){ cout << "Feet is: " << feet_1 << endl << "Inches is: " << inch_1 <<endl;}
  void Distance::add(Distance d1){ feet_1 = d1.feet_1 + d1.feet_2; inch_1 = d1.inch_1 + d1.inch_2;}
  void Distance::sub(Distance d1){ feet_1 = d1.feet_1 - d1.feet_2; inch_1 = d1.inch_1 - d1.inch_2;}
@@ -52,7 +53,10 @@ public:
     // Destructor
     ~Measurement(){}
 
-	void Run() {// only public one
+    void Run();
+};
+
+    void Measurement::Run() {// only public one
      cout << "please enter Feet number 1: ";
      cin >> feet1;
      cout << "\nplease enter Feet number 2: ";
@@ -70,9 +74,8 @@ public:
      cout << "Press any key to continue \n";
      getch();
      system("cls");
-		Run();	// Restart again
+     Run();	// Restart again
 	}
-};
 
  int main(){
     Measurement service;
