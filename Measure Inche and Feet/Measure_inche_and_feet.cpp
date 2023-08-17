@@ -25,6 +25,7 @@
          void mul(Distance d1);
          void op(int c,Distance d1);
  };
+
  void Distance::show(){ cout << "Feet is: " << feet_1 << endl << "Inches is: " << inch_1 <<endl;}
  void Distance::add(Distance d1){ feet_1 = d1.feet_1 + d1.feet_2; inch_1 = d1.inch_1 + d1.inch_2;}
  void Distance::sub(Distance d1){ feet_1 = d1.feet_1 - d1.feet_2; inch_1 = d1.inch_1 - d1.inch_2;}
@@ -42,17 +43,20 @@ private:
     Distance d1;
     int feet1;
     int feet2;
-    int choise;
+    int choice;
     float inch1;
     float inch2;
 public:
     // Constructor
-    Measurement(int feet1,int feet2, float inch1,float inch2,int choise):feet1(feet1),feet2(feet2),inch1(inch1),inch2(inch2),choise(choise){}
+    Measurement(int feet1,int feet2, float inch1,float inch2,int choice):feet1(feet1),feet2(feet2),inch1(inch1),inch2(inch2),choice(choice){}
     Measurement(){feet1 = 0; feet2 = 0; inch1 = 0.0; inch2 = 0.0; choise = 0;}
     // Destructor
     ~Measurement(){}
 
-	void Run() {// only public one
+    void Run();
+};
+
+    void Measurement::Run() {// only public one
      cout << "please enter Feet number 1: ";
      cin >> feet1;
      cout << "\nplease enter Feet number 2: ";
@@ -64,15 +68,14 @@ public:
      cin >> inch2;
      d1.setInch(inch1,inch2);
      cout << "\nplease choose operation\n" << "1- (+) Addition \n2- (-) Subtraction \n3- (*) Multiplication\n";
-     cin >> choise;
-     d1.op(choise,d1);
+     cin >> choice;
+     d1.op(choice,d1);
      d1.show();
      cout << "Press any key to continue \n";
      getch();
      system("cls");
-		Run();	// Restart again
+     Run();	// Restart again
 	}
-};
 
  int main(){
     Measurement service;
