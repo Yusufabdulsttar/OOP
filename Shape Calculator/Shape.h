@@ -14,7 +14,7 @@
 #include <cmath>
 #include <conio.h>
 
-/* section : Micro Declaration  */
+/* section: Micro Declaration  */
 
 #define PI (3.14)
 #define RECTANGLE        1
@@ -25,20 +25,19 @@
 #define CIRCUMFERENCE    2
 #define Exit             3
 
-/* section : Micro Function Declaration  */
+/* section: Micro Function Declaration  */
 
-/* section : Data Type Declaration  */
+/* section: Data Type Declaration  */
 using namespace std;
 
 class Shape {
 public:
-	virtual float Area() = 0;      //pure virtual function
-	virtual float Perimeter() {    //virtual function
-	    cout<< "this shape doesn't have a Perimeter";
-	}
-    virtual float circumference() { //virtual function
-        cout<< "this shape doesn't have a circumference";
-    }
+	virtual float Area() = 0;       //pure virtual function
+
+	virtual float Perimeter();      //virtual function
+
+    	virtual float circumference();  //virtual function
+
 };
 
 
@@ -47,11 +46,11 @@ private:
 	int Length;
 	int width;
 public:
-	Rectangle(int Length, int width) :
-	      Length(Length), width(width) {
-	}
+	Rectangle(int Length, int width);
+
 	float Area();
-    float Perimeter();
+
+        float Perimeter();
 };
 
 class Triangle: public Shape {
@@ -61,10 +60,10 @@ private:
 	int third_side;
 	float Semiperimeter;
 public:
-	Triangle(int first_side, int second_side , int third_side) :
-	      first_side(first_side), second_side(second_side),third_side(third_side) {
-	}
+	Triangle(int first_side, int second_side , int third_side);
+
 	float Area();
+
 	float Perimeter();
 };
 
@@ -72,14 +71,14 @@ class Circle: public Shape {
 private:
 	int radius;
 public:
-	Circle(int radius) :
-	    radius(radius) {
-	}
+	Circle(int radius);
+
 	float Area();
-    float circumference();
+
+        float circumference();
 };
 
-/* section : Function Declaration  */
+/* section: Function Declaration  */
 
 
 
