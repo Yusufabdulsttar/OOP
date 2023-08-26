@@ -49,7 +49,7 @@ private:
 public:
     // Constructor
     Measurement(int feet1,int feet2, float inch1,float inch2,int choice):feet1(feet1),feet2(feet2),inch1(inch1),inch2(inch2),choice(choice){}
-    Measurement(){feet1 = 0; feet2 = 0; inch1 = 0.0; inch2 = 0.0; choise = 0;}
+    Measurement(){feet1 = 0; feet2 = 0; inch1 = 0.0; inch2 = 0.0; choice = 0;}
     // Destructor
     ~Measurement(){}
 
