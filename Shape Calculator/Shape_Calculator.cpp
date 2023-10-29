@@ -73,7 +73,6 @@ void Run(){
                     cout <<"\n Please Enter Correct Choice\n";
                     cout<<"********************************";
                 }
-
             }
         }
         else if(choice_1 == TRIANGLE) {
