@@ -7,8 +7,31 @@
 
 #include "Shape.h"
 
+void Get_Area(Shape* shape){
+    //this function know nothing about specific shape
+    //this is a Generic function
+        cout<<"********************************";
+        cout<<"\n The Area = "<<shape->Area()<<"\n";   //Run time determined
+        cout<<"********************************";
+}
+
+void Get_Perimeter(Shape* shape){
+    //this function know nothing about specific shape
+    //this is a Generic function
+        cout<<"********************************";
+        cout<<"\n The Perimeter = "<<shape->Perimeter()<<"\n"; //Run time determined
+        cout<<"********************************";
+}
+
+void Get_Circumference(Shape* shape){
+    //this function know nothing about specific shape
+    //this is a Generic function
+        cout<<"********************************";
+        cout<<"\n The Circumference = "<<shape->circumference()<<"\n"; //Run time determined
+        cout<<"********************************";
+}
+
 void Run(){
-    Shape* Shape_select = nullptr;
     int choice_1 =0;
     int parameter1 = 0, parameter2 = 0,parameter3 = 0;
     cout<<"**************************************";
@@ -30,7 +53,6 @@ void Run(){
             cin>>parameter2;
 
             Rectangle Rec_Obj(parameter1,parameter2);
-            Shape_select = &Rec_Obj;
 
             while(choice_1 != Exit) {
             cout<<"\n Enter your choice: \n"<<endl;
@@ -40,14 +62,10 @@ void Run(){
             cin>>choice_1;
                 system("cls");
                 if (choice_1 == AREA){
-                    cout<<"********************************";
-                    cout<<"\n Area of Rectangle = "<<Shape_select->Area()<<"\n";
-                    cout<<"********************************";
+                        Get_Area(&Rec_Obj); 
                 }
                 else if (choice_1 == PERIMETER){
-                    cout<<"********************************";
-                    cout<<"\n Perimeter of Rectangle = "<<Shape_select->Perimeter()<<"\n";
-                    cout<<"********************************";
+                        Get_Perimeter(&Rec_Obj);
                 }
                 else if (choice_1 == Exit){ /* Exit the loop */}
                 else{
@@ -68,7 +86,6 @@ void Run(){
             cin>>parameter3;
 
             Triangle TRI_Obj(parameter1,parameter2,parameter3);
-            Shape_select = &TRI_Obj;
 
             while(choice_1 != Exit) {
                 cout<<"\n Enter your choice: \n"<<endl;
@@ -79,14 +96,10 @@ void Run(){
                 system("cls");
 
                 if (choice_1 == AREA){
-                    cout<<"********************************";
-                    cout<<"\n Area of Triangle = "<<Shape_select->Area()<<"\n";
-                    cout<<"********************************";
+                        Get_Area(&TRI_Obj);
                 }
                 else if (choice_1 == PERIMETER){
-                    cout<<"********************************";
-                    cout<<"\n Perimeter of Triangle = "<<Shape_select->Perimeter()<<"\n";
-                    cout<<"********************************";
+                        Get_Perimeter(&TRI_Obj);
                     }
                 else if (choice_1 == Exit){ /* Exit the loop */}
                 else{
@@ -103,7 +116,6 @@ void Run(){
             cin>>parameter1;
 
             Circle Cir_Obj(parameter1);
-            Shape_select = &Cir_Obj;
 
             while(choice_1 != Exit) {
                 cout<<"\n Enter your choice: \n"<<endl;
@@ -114,14 +126,10 @@ void Run(){
                 system("cls");
 
                 if (choice_1 == AREA){
-                    cout<<"********************************";
-                    cout<<"\n Area of Circle = "<<Shape_select->Area()<<"\n";
-                    cout<<"********************************";
+                        Get_Area(&Cir_Obj);
                 }
                 else if (choice_1 == CIRCUMFERENCE){
-                    cout<<"********************************";
-                    cout<<"\n Circumference of Circle = "<<Shape_select->circumference()<<"\n";
-                    cout<<"********************************";
+                        Get_Circumference(&Cir_Obj);
                 }
                 else if (choice_1 == Exit){ /* Exit the loop */}
                 else{
